@@ -1,76 +1,35 @@
-# `matrix-bot-sdk` Bot Templates
+# Event Registration App
 
-A template for creating bots with [matrix-bot-sdk](https://www.npmjs.com/package/matrix-bot-sdk).
+## Overview
 
-## Projects using this template
+This Event Registration App is a simple CRUD application developed using ASP.NET Core Blazor with .NET 8. The application allows users to view available events, manage events, and register for events. Authentication and role-based authorization ensure that only authorized users can perform certain actions, such as creating or deleting events.
 
-- [matrix-zammad](https://github.com/Half-Shot/matrix-zammad) by [Half-Shot](https://github.com/Half-Shot)
+## Features
 
-Want your project listed? [Edit this doc](https://github.com/turt2live/matrix-bot-sdk-bot-template/edit/master/README.md).
+- **Landing Page**: Displays a list of available events.
+- **Event Management**: Admins can create, read, update, and delete events.
+- **User Registration**: Users can register for events, with each registration generating a unique reference number.
+- **Role-Based Authorization**: Admins have full control over event management, while regular users can only view and register for events.
+- **Validation**: Implemented using Blazored.FluentValidation for robust form validation.
 
-## Running / Building
+## Technology Stack
 
-After clicking the 'use this template' button and cloning the repo, you'll need to install the dependencies
-and open an editor to get started. This assumes you have at least **NodeJS 14 or higher**.
+- **ASP.NET Core Blazor (Server-Side)**: Provides a rich, interactive UI.
+- **SQLite**: A lightweight, file-based database.
+- **Entity Framework Core (EFCore)**: Manages database access and ORM.
+- **Bootstrap**: Ensures a responsive and modern UI design.
+- **ASP.NET Identity**: Handles authentication and authorization.
+- **Blazored.FluentValidation**: Manages validation logic within Blazor forms.
 
-1. Replace this README with something useful.
-2. Update your project's details in `package.json`.
-3. Run `npm install` to get the dependencies.
+## Installation
 
-To build it: `npm run build`.
+### Prerequisites
 
-To run it: `npm run start:dev`
+- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or any other IDE supporting .NET 8
 
-To check the lint: `npm run lint`
+### Steps
 
-To build the Docker image: `docker build -t your-bot:latest .`
-
-To run the Docker image (after building): `docker run --rm -it -v $(pwd)/config:/bot/config your-bot:latest`
-*Note that this will require a `config/production.yaml` file to exist as the Docker container runs in production mode.*
-
-### Configuration
-
-This template uses a package called `config` to manage configuration. The default configuration is offered
-as `config/default.yaml`. Copy/paste this to `config/development.yaml` and `config/production.yaml` and edit
-them accordingly for your environment.
-
-## Project structure
-
-This is a somewhat opinionated template that is runnable out of the box. The project is TypeScript with
-a linter that matches the bot-sdk itself. All the good bits of the bot are under `src/`.
-
-### `src/index.ts`
-
-This is where the bot's entry point is. Here you can see it reading the config, preparing the storage,
-and setting up other stuff that it'll use throughout its lifetime. Nothing in here should really require
-modification - most of the bot is elsewhere.
-
-### `src/commands/handler.ts`
-
-When the bot receives a command (see `index.ts` for handoff) it gets processed here. The command structure
-is fairly manual, but a basic help menu and processing for a single command is there.
-
-### `src/commands/hello.ts`
-
-This is the bot's `!bot hello` command. It doesn't do much, but it is an example.
-
-### `src/config.ts`
-
-This is simply a typescript interface for your config so you can make use of types.
-
-### `lib/`
-
-This is where the project's build files go. Not really much to see here.
-
-### `storage/`
-
-This is the default storage location. Also not much to see here.
-
-## Help!
-
-Come visit us in [#matrix-bot-sdk:t2bot.io](https://matrix.to/#/#matrix-bot-sdk:t2bot.io) on Matrix if you're
-having trouble with this template.
-
-## Credits
-
-Credit to anoa's [matrix-nio template](https://github.com/anoadragon453/nio-template) for the README format.
+1. **Clone the Repository**:
+   ```bash
+   git clone <repository-url>
